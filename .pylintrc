@@ -1,0 +1,58 @@
+[MASTER]
+py-version=3.11
+ignore=.venv
+init-hook="import sys; from pathlib import Path; sys.path.append(str((list(Path.cwd().glob('.venv/lib/*/site-packages')) or ["."])[0]))"
+load-plugins =  pylint.extensions.bad_builtin,
+                pylint.extensions.broad_try_clause,
+                pylint.extensions.check_elif,
+                pylint.extensions.code_style,
+                pylint.extensions.comparison_placement,
+                pylint.extensions.confusing_elif,
+                pylint.extensions.consider_refactoring_into_while_condition,
+                pylint.extensions.consider_ternary_expression,
+                pylint.extensions.dict_init_mutate,
+                pylint.extensions.docparams,
+                pylint.extensions.docstyle,
+                pylint.extensions.dunder,
+                pylint.extensions.empty_comment,
+                pylint.extensions.eq_without_hash,
+                pylint.extensions.for_any_all,
+                # pylint.extensions.magic_value,
+                pylint.extensions.mccabe,
+                pylint.extensions.no_self_use,
+                pylint.extensions.overlapping_exceptions,
+                pylint.extensions.private_import,
+                pylint.extensions.redefined_loop_name,
+                pylint.extensions.redefined_variable_type,
+                pylint.extensions.set_membership,
+                pylint.extensions.typing
+
+[MESSAGES CONTROL]
+include-naming-hint=yes
+disable =   missing-module-docstring, # C0114
+            missing-class-docstring, # C0115
+            missing-function-docstring, # C0116
+            missing-type-doc, # W9016
+            duplicate-code # R0801
+enable =    bad-inline-option, # I0010
+            deprecated-pragma, # I0022
+            file-ignored, # I0013
+            use-symbolic-message-instead, # I0023
+            useless-suppression, # I0021
+            use-implicit-booleaness-not-comparison-to-string, # C1804
+            use-implicit-booleaness-not-comparison-to-zero # C1805
+
+[FORMAT]
+max-line-length=88
+good-names=i,j,x,y
+
+[MISCELLANEOUS]
+notes=FIXME,TODO
+
+[STRING_CONSTANT]
+# Doc: https://pylint.pycqa.org/en/latest/user_guide/messages/warning/implicit-str-concat.html
+check-quote-consistency=yes
+
+[VARIABLES]
+# allow-global-unused-variables=no
+
