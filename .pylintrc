@@ -1,6 +1,7 @@
 [MASTER]
 py-version=3.11
 ignore=.venv
+ignore-pattern=[\w]+XX[\w]+.py
 init-hook="import sys; from pathlib import Path; sys.path.append(str((list(Path.cwd().glob('.venv/lib/*/site-packages')) or ["."])[0]))"
 load-plugins =  pylint.extensions.bad_builtin,
                 pylint.extensions.broad_try_clause,
